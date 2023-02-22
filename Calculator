@@ -1,0 +1,72 @@
+package hhh;
+import java.util.Scanner;
+
+public class Main {
+	
+	static int num1,num2;
+	static String operation;
+	
+	public static void main(String []args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter a number: ");
+		num1 = sc.nextInt();
+		
+		System.out.println("Choose an operator: + , - , * , /");
+		operation = sc.next();
+		
+		System.out.println("Enter another number: ");
+		num2 = sc.nextInt();
+		
+		
+		//OBJECT
+		Calculate obj = new Calculate(num1 , num2);
+		
+		
+		switch (operation) {
+			case "+": System.out.println("SUM: "+obj.addition());
+			break;
+			case "-": System.out.println("DIFFERENCE: "+obj.subtraction());
+			break;
+			case "*": System.out.println("PRODUCT: "+obj.multiplication());
+			break;
+			case "/": System.out.println("QUOTIENT: "+obj.division());
+			break;
+		}
+	}
+
+}
+
+     class Calculate{
+    	 
+    	 int a , b;
+    	 
+    	 
+    	 //constructor
+    	 Calculate(int a , int b){
+    		 
+    		 this.a = a;
+    		 this.b = b;
+    		 
+    	 }
+    	 
+    	 //methods
+    	  int addition() {	
+    			return a+b;
+    			
+    		}
+    	  int subtraction() {	
+    			return a-b;
+    			
+    		}
+    	  int multiplication() {
+    			return a*b;
+    			
+    		}
+    	  int division() {	
+    			return a/b;
+    			
+    			
+    	}
+     }
